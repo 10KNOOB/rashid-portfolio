@@ -1,0 +1,20 @@
+.nav {
+  background: #77acf1;
+  color: white;
+  z-index: 1;
+}
+
+.nav-text {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.nav-res {
+  color: white;
+  background: rgb(62, 219, 240);
+  background: linear-gradient(
+    0deg,
+    rgba(62, 219, 240, 1) 0%,
+    rgba(119, 172, 241, 1) 100%
+  );
+}

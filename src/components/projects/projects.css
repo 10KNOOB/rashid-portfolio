@@ -1,0 +1,93 @@
+#projects {
+  padding: 4rem;
+}
+
+.projects__img {
+  width: 98%;
+  height: 480px;
+  object-fit: fill;
+  border-radius: 1rem;
+}
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-top: 8rem;
+  padding-left: 11rem /* 96px */;
+  padding-right: 7rem; /* 96px */
+}
+
+.card > div {
+  width: 90%;
+  background: transparent;
+  height: 30.5rem;
+  border-radius: 1rem;
+  border: 1px solid #3edbf0;
+  transition: all 1s;
+  transform-style: preserve-3d;
+}
+
+.card > div:hover {
+  transform: rotateY(180deg);
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 1rem;
+}
+
+.card__front {
+  font-size: 150px;
+}
+
+.card__back {
+  background-color: #77acf1;
+  transform: rotateY(180deg);
+  font-size: 15px;
+}
+
+.back__btn {
+  background-color: #77acf1;
+  color: white;
+}
+
+/* ========== MEDIA QUERIES (MEDIUM DEVICE) =========*/
+
+@media screen and (max-width: 1024px) {
+  #projects {
+    padding: 2rem;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding-top: 8rem;
+    padding-left: 5rem /* 96px */;
+    padding-right: 0rem; /* 96px */
+  }
+}
+
+/* ========== MEDIA QUERIES (SMALL DEVICE) =========*/
+
+@media screen and (max-width: 645px) {
+  #projects {
+    padding: 0rem;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 8rem;
+    padding-left: 3rem /* 96px */;
+    padding-right: 3rem; /* 96px */
+  }
+}
