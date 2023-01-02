@@ -31,9 +31,13 @@ const contact = () => {
   };
 
   return (
-    <section id="contact">
-      <h2>Contact me</h2>
-      <h5>Hire me or send me good wishes</h5>
+    <section id="contact" className="pt-20">
+      <div className="flex justify-center flex-col items-center">
+        <h1 className="text-4xl font-bold text-[#3edbf0]">Contact Me</h1>
+        <span className="text-white text-xl">
+          Hire me or send me good wishies !
+        </span>
+      </div>
 
       <div className="container contact__container">
         <div className="contact__options text-white">

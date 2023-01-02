@@ -4,9 +4,11 @@ import { BsFillPatchCheckFill } from "react-icons/bs";
 const Skill = () => {
   return (
     <section id="experience">
-      <h2> My Experience </h2>
-      <h5> What Skills I have </h5>
-      <div className="container experience__container">
+      <div className="flex justify-center flex-col items-center">
+        <h1 className="text-4xl font-bold text-[#3edbf0]">My Skills</h1>
+        <span className="text-white text-xl">What Skill I have !</span>
+      </div>
+      <div className="container experience__container max-w-6xl mx-auto">
         <div className="experience_frontend">
           <h3>Frontend Development</h3>
           <div className="experience__content">

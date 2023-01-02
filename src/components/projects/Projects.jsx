@@ -1,102 +1,100 @@
 import React from "react";
-import "./projects.css";
-import FirstImage from "../../assets/qr_design.jpg";
-import SecondImage from "../../assets/card_design.jpg";
-import ThirdImage from "../../assets/port__design.png";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// import required modules
+import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+
+//import images
+import img1 from "../../assets/port__design.png";
+import img2 from "../../assets/qr_design.jpg";
+import img3 from "../../assets/card_design.jpg";
+
+const data = [
+  {
+    id: 1,
+    img: img1,
+    details:
+      "This is my first web-site, I created it with only HTML,CSS and Vanila JS.",
+    date: "Sep 3, 2022",
+    link: "https://rashid-shahriar.netlify.app/",
+  },
+  {
+    id: 2,
+    img: img2,
+    details: "This is a card design, I created it with only HTML and CSS.",
+    date: "Sep 28, 2022.",
+    link: "https://responsive-qr-card.netlify.app/",
+  },
+  {
+    id: 3,
+    img: img3,
+    details: "This is a card design, I created it with only HTML and CSS.",
+    date: "Sep 29, 2022.",
+    link: "https://extraordinary-seahorse-d0ed3e.netlify.app/",
+  },
+];
 
 const Projects = () => {
   return (
-    <section id="projects">
-      <h2>My Project</h2>
-      <h5>Lets see more about my projects!</h5>
+    <section id="projects" className="pt-20 max-w-6xl mx-auto px-2 lg:px-0">
+      <div className="flex justify-center flex-col items-center">
+        <h1 className="text-4xl font-bold text-[#3edbf0]">My Project</h1>
+        <span className="text-white text-xl">
+          Lets see more about my projects!
+        </span>
 
-      <div class="container projects__my">
-        <div className="card">
-          <div class="card__content">
-            <div class="card__front">
-              <img
-                src={FirstImage}
-                className="projects__img"
-                alt="qr design card"
-              ></img>
-            </div>
-            <div class="card__back">
-              <div class="p-6 max-w-sm">
-                <div className="back__text">
-                  <p class="text-left ...">
-                    This is a QR code card project. In this project I used HTML
-                    and CSS in oreder to built this projects. It is a Front-end
-                    Mentor Project.
-                  </p>
-                </div>
-                <hr className="p-2"></hr>
-                <button
-                  type="button"
-                  class="py-2 px-5 text-sm rounded-full back__btn hover:bg-blue focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+        <div className="mt-20">
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            pagination={true}
+            navigation={true}
+            modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+            className="w-[800px] py-[50px] "
+          >
+            {data.map(({ id, img, link, details, date }) => (
+              <SwiperSlide
+                key={id}
+                className="flex bg-center bg-cover max-w-[250px] max-h-[400px] border-2 border-[#3edbf0] relative"
+              >
+                <img src={img} alt="" className="max-w-full" />
+                <div
+                  className="absolute hover:bg-gradient-to-b from-transparent to-gray-900 w-full h-full opacity-0 hover:opacity-100 flex flex-col justify-end text-white 
+                leading-4 gap-y-4 p-2"
                 >
-                  <a href="https://responsive-qr-card.netlify.app/">
-                    Click here
+                  <span>{details}</span>
+                  <span>Created date: {date}</span>
+                  <a
+                    href={link}
+                    className="text-center hover:text-[#3edbf0] font-medium"
+                    target="_blank"
+                    rel="nofollow noreferrer"
+                  >
+                    Click here to live priview!
                   </a>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card__content">
-            <div class="card__front">
-              <img
-                src={SecondImage}
-                className="projects__img"
-                alt="product card design"
-              ></img>
-            </div>
-            <div class="card__back">
-              <div class="p-6 max-w-sm">
-                <div className="back__text">
-                  <p class="text-left ...">
-                    Another Front-end Mentor card project. In this project I
-                    used HTML and CSS in oreder to built this projects.
-                  </p>
                 </div>
-                <hr className="p-2"></hr>
-                <button
-                  type="button"
-                  class="py-2 px-5 text-sm rounded-full back__btn hover:bg-blue focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                >
-                  <a href="https://extraordinary-seahorse-d0ed3e.netlify.app/">
-                    Click here
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card__content">
-            <div class="card__front">
-              <img
-                src={ThirdImage}
-                className="projects__img"
-                alt="my porftfolio"
-              ></img>
-            </div>
-            <div class="card__back">
-              <div class="p-6 max-w-sm">
-                <div className="back__text">
-                  <p class="text-left ...">
-                    Are you exicited to look my first porftfolio that I made
-                    with only HTML, CSS, JavaScript and Bootstrap.
-                  </p>
-                </div>
-                <hr className="p-2"></hr>
-                <button
-                  type="button"
-                  class="py-2 px-5 text-sm rounded-full back__btn hover:bg-blue focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                >
-                  <a href="https://rashid-shahriar.netlify.app/">Click here</a>
-                </button>
-              </div>
-            </div>
-          </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

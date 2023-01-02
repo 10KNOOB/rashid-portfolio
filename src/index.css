@@ -5,24 +5,10 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html,
+  body {
+    @apply scroll-smooth scroll-pt-[70px];
     font-family: "Rajdhani", sans-serif;
     background: #04009a;
-    margin: 0;
-    padding: 0;
   }
-}
-
-section > h2,
-section > h5 {
-  text-align: center;
-}
-h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #3edbf0;
-}
-h5 {
-  font-size: 1.2rem;
-  color: white;
 }
