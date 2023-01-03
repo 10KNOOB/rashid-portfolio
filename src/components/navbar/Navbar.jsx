@@ -39,42 +39,43 @@ const Transbar = () => {
     setNav(!nav);
   };
   return (
-    <div
-      className={
-        shadow
-          ? "fixed w-full h-[70px] duration-300 z-[100] shadow-lg backdrop-blur-xl"
-          : "fixed w-full h-[70px] duration-300 z-[100] "
-      }
-    >
-      {/* this is for large screen devices */}
-      <div className="flex justify-between items-center h-[70px] max-w-6xl mx-auto text-white px-2 md:px-0">
-        <h1 className="w-full text-3xl font-bold text-[#77acf1]">
-          RASHID-DEV.
-        </h1>
-        <ul className="hidden md:flex justify-around items-center">
-          {links.map(({ id, link }) => (
-            <li
-              key={id}
-              className="cursor-pointer capitalize hover:scale-105 duration-200 px-8"
-            >
-              <Link to={link} smooth duration={500}>
-                {link}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div onClick={handleNav} className="block md:hidden">
-          {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+    <div>
+      <div
+        className={
+          shadow
+            ? "fixed w-full h-[70px] duration-300 z-[10] shadow-lg backdrop-blur-xl"
+            : "fixed w-full h-[70px] duration-300 z-[10] "
+        }
+      >
+        {/* this is for large screen devices */}
+        <div className="flex justify-between items-center h-[70px] max-w-6xl mx-auto text-white px-2 md:px-0">
+          <h1 className="w-full text-3xl font-bold text-[#77acf1]">
+            RASHID-DEV.
+          </h1>
+          <ul className="hidden md:flex justify-around items-center">
+            {links.map(({ id, link }) => (
+              <li
+                key={id}
+                className="cursor-pointer capitalize hover:scale-105 duration-200 px-8"
+              >
+                <Link to={link} smooth duration={500}>
+                  {link}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div onClick={handleNav} className="block md:hidden">
+            {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+          </div>
         </div>
       </div>
-
       {/* this is for small screen devices */}
 
       <div
         className={
           nav
-            ? "fixed h-screen left-0 top-0 w-[80%] text-white ease-in duration-500 backdrop-blur-lg"
-            : "fixed h-screen left-[-100%] w-[80%] top-0 ease-in duration-500"
+            ? "fixed h-screen left-0 top-0 w-[80%] text-white ease-in duration-500 backdrop-blur-lg z-40"
+            : "fixed h-screen left-[-100%] w-[80%] top-0 ease-in duration-500 backdrop-blur-lg z-40"
         }
       >
         <ul>
