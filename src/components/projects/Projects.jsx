@@ -60,16 +60,16 @@ const Projects = () => {
               disableOnInteraction: false,
             }}
             coverflowEffect={{
-              rotate: 50,
+              rotate: 0,
               stretch: 0,
-              depth: 100,
+              depth: 300,
               modifier: 1,
               slideShadows: true,
             }}
             pagination={true}
             navigation={true}
             modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
-            className="w-[800px] py-[50px] "
+            className="w-full md:w-[650px] py-[50px] "
           >
             {data.map(({ id, img, link, details, date }) => (
               <SwiperSlide
